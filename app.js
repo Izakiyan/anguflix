@@ -1,11 +1,12 @@
-var app = angular.module("appName", []);
+var app = angular.module("movieApp", []);
 
 
-app.factory('nameService', function () {
+app.factory('flixService', function () {
 	var personObj = [];
 	return {personObj:personObj}
 });
 
 
-app.controller('app1', function ($scope) {
+app.controller('app1', function ($scope,flixService) {
+	
 });
