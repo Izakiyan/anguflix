@@ -37,19 +37,20 @@ app.factory('moviesService', function () {
 	return {allMovies:allMovies}
 });
 
-var userMoney = 10;
+// var userMoney = 10;
 
 app.controller('appAllMovies', function ($scope,moviesService) {
 	$scope.userMovies=[];
 	$scope.allMovies = moviesService.allMovies;
+	$scope.userMoney = 10;
 
 	$scope.toggleShow = function (movie) {
 		 movie.showInfo = !movie.showInfo;
 	};
 
 	$scope.buyMovie = function (movie) {
-		movie.price.push($scope.userMovies(movie));
-		userMoney = userMoney - movie.price;
+		$scope.userMoney -= movie.price; 
+		console.log($scope.userMoney);
 	};
 });
 
